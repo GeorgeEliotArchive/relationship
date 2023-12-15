@@ -1,3 +1,4 @@
+
 html {
   width: 100vw;
   height: 100vh;
@@ -12,6 +13,154 @@ html .Application {
   display: flex;
   flex-direction: row;
 }
+
+/*--- NEW SEARCH BAR - UNFINSHED---*/
+/* .search {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 2;
+  align-items: center;
+  border-radius: 65px;
+  border: none;
+  background: #68302C;
+  padding: 30px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.submit {
+  border: none;
+  background: none;
+  color: white;
+  cursor: pointer;
+  fontSize: 40px;
+}
+
+.search-txt {
+  width: 0;
+  border-radius: 65px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 40px;
+  outline: none;
+  transition: all 1s;
+}
+
+.active .search-txt {
+  width: 350px;
+  background: #F2F4F8;
+  color: black;
+  padding: 0 10px;
+}
+ */
+
+
+
+/* .search {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  background: #68302C;;
+  padding: 30px;
+  border-radius: 84px;
+  border: none;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.frame {
+  align-items: center;
+  height: 100%;
+  transition: all 0.75s ease;
+}
+.frame .submit {
+  cursor: pointer;
+  color: #F2F4F8;
+  background: none;
+  border: none;
+  
+}
+.search-txt {
+  font-size: 20px;
+  font-family: Bahnschrift;
+  font-style: normal;
+  font-weight: 300;
+  border: none;
+  outline: none;
+  background: transparent;
+  transition: 0.75s;
+  line-height: 26px;
+  width: 0;
+  
+}
+
+::placeholder {
+  color: var(--Black, #000);
+}
+.active {
+background: #68302C;
+padding: 0px 12px;
+gap: 24px;
+align-self: stretch;
+border-radius: 65px;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+display: flex;
+align-items: flex-start;
+}
+
+.box {
+  display: none;
+}
+.active .frame {
+display: flex;
+height: 100%;
+padding: 12px;
+align-items: center;
+gap: 24px;
+flex: 1 0 0;
+transition: 0.75s;
+}
+
+.active .frame .submit {
+  width: 30px;
+  height: 30px;
+}
+
+.active .frame .box {
+display: flex;
+padding: 24px;
+align-items: center;
+gap: 10px;
+align-self: stretch;
+border-radius: 24px 65px 65px 24px;
+background: var(--Input-field-background, #F2F4F8);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.active .frame .box .search-txt {
+width: 100%;
+}
+
+.result-box ul {
+  border-top: 1px solid;
+  padding: 15px 10px;
+}
+
+.result-box ul li {
+  list-style: none;
+  border-radius: 3px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.result-box ul li:hover {
+  background: #eee;
+} */
+
 html .Application .UserMenu {
   position: absolute;
   /* padding: 10px; */
@@ -159,6 +308,10 @@ html .Application .UserMenu #Toggleable #Biography #BiographySummary {
 html .Application .UserMenu #Toggleable #Biography #BiographyLetters {
   margin-top: 10px;
   padding: 1%;
+}
+html .Application.UserMenu #Toggleable #Biography #BiographyLinks {
+  padding: 1%;
+  margin-top: 10px;
 }
 html .Application .UserMenu .ToggleMenu {
   display: flex;

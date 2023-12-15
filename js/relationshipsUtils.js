@@ -33,6 +33,47 @@ let IMAGE_R = 80; //radius for biography container
 
 let USER_MENU_SHOWN = true;
 
+
+async function getMembers() {
+  let letterID = '46' 
+  let membersList = []
+  let letters = []
+  let data = []
+  // using the Fetch API to get collection info
+  const response = await (fetch('https://georgeeliotarchive.org/api/items?collection=19'))
+  const members = await response.json()
+
+  // iterates through the JSON to get desired information of each member of the collection  
+  for (let i = 0, l = members.length; i < l; i++) {   
+      
+      for (let j = 0, k = members[i].element_texts.length; j < k; j++) {  
+          if (members[i].element_texts[j].element.id == letterID) {  // finds letters by matching ID
+              letters[i] = members[i].element_texts[j].text;
+              break;
+          } 
+          else {
+              letters[i] = ''
+          }  
+      }
+  let member = {
+                "name": members[i].element_texts[0].text,
+        "bio": members[i].element_texts[1].text,
+        "letters": letters[i]
+          }
+    membersList.push(member)
+    
+  }
+
+
+  for(let i = 0; i < members.length; i++) {
+      data.push("\n\"" + membersList[i].name + "\"")
+      data.push("\"" + membersList[i].bio + "\"")
+      data.push("\"" + membersList[i].letters + "\"")
+  }
+  data = "FullName,Biography,Letters" + data;
+  return data;
+}
+
 /**
  * Creates a "pattern" element with the given imagePath and sets the pattern id with the index of the individual.
  *
@@ -88,7 +129,7 @@ function parseFullName(node) {
   //     name = node["Title"] + " " + name;
   // }
 
-  node["FullName"] = name;
+  node["FullName"] = name.replace(/\s*,\s*/g, ", ").trim().replace(/\s+/g, ' ');
   return node;
 }
 
@@ -215,6 +256,18 @@ function showSummary(node) {
     .html(handleBiographyText(data["Biography"].replace(/\"/g, '\\"')));
   if (data.Image) {
     document.getElementById("BiographyPhoto").src = "images/png/" + data.Image;
+  } else {
+    switch (data.Relationship) {
+      case "friend":
+        document.getElementById("BiographyPhoto").src = "images/png/nopicture_friend.png";
+        break;
+      case "family":
+        document.getElementById("BiographyPhoto").src = "images/png/nopicture_family.png";
+        break;
+      default:
+        document.getElementById("BiographyPhoto").src = "images/png/nopicture_acquaintence.png";
+        break;
+      }
   }
   if (data["Letters"]) {
     d3.select("#BiographyLetters")
@@ -224,6 +277,32 @@ function showSummary(node) {
       );
     d3.select("#BiographyLetters").append("text").html(data["Letters"]);
   }
+  if (data["Links"]) {
+    d3.select("#BiographyLinks")
+      .append("text")
+      .html(
+        "<u><br>Links to other resources:</u></br>"
+      );
+      // adds new links depending on how many there are. 
+      // use space separations to add more links.
+      strLinks = data["Links"].split(/[ ]+/);
+      for(var i = 0; i < strLinks.length; i++) {
+        console.log(strLinks[i]);
+        d3.select("#BiographyLinks").append("text").html('<a id="hyperlink" href="#"></a>');
+        getUrl(strLinks[i], i+1);
+      }
+    }
+      
+}
+
+/**
+ * Gets url and updates hyperlink if person has relevant links
+ * 
+ */
+function getUrl(link, index) {
+  var hyperlink = document.getElementById("hyperlink");
+  hyperlink.href = link;
+  hyperlink.innerText = "[" + index + "]";
 }
 
 /**
@@ -247,6 +326,7 @@ function clearDisplay() {
   document.getElementById("BirthAndDeath").innerHTML = "";
   document.getElementById("BiographySummary").innerHTML = "";
   document.getElementById("BiographyLetters").innerHTML = "";
+  document.getElementById("BiographyLinks").innerHTML = "";
   document.getElementById("Biography").style.display = "none";
 }
 
@@ -298,9 +378,25 @@ function filterInput() {
 
     indicies.forEach(function (index) {
       let nodeId = people[index].id;
-      selectSearchedNode(d3.select("#" + nodeId));
+      display(selectSearchedNode(d3.select("#" + nodeId)));
+      
     });
   }
+}
+/**
+ * displays all filtered nodes in a list as you type
+ */
+const resultsBox=document.querySelector(".result-box");
+function display(result){
+  const content = result.map((list) => {
+    return "<li onclick=selectInput(this)>" + list + "</li>";
+  });
+
+  resultsBox.innerHTML = "<ul>" + content + "</ul>";
+}
+
+function selectInput(element) {
+  searchBar.value = element.innerHTML;
 }
 
 /**

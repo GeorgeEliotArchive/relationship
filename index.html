@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" />
   </head>
-  <body>
+  <body onload="getMembers()">
     <div class="Application">
       <div class="UserMenu" id="UserMenu">
         <div id="Toggleable">
@@ -64,6 +64,7 @@
             </div>
             <div id="BiographySummary"></div>
             <div id="BiographyLetters"></div>
+            <div id="BiographyLinks"></div>
           </div>
         </div>
         <div class="ToggleMenu" onclick="toggleMenu()">
@@ -89,7 +90,28 @@
       <div id="relationshipWeb"></div>
     </div>
 
+    <!-- <div class="search" id="search-bar">
+      <div class="frame">
+        <button class="submit"><i class="fas fa-search"></i><svg
+          src="public/Search icon.svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M21.4315 11.7631C21.4315 16.497 17.4133 20.5261 12.2158 20.5261C7.01825 20.5261 3 16.497 3 11.7631C3 7.02913 7.01825 3 12.2158 3C17.4133 3 21.4315 7.02913 21.4315 11.7631ZM18.7644 21.6948C16.8718 22.8544 14.6252 23.5261 12.2158 23.5261C5.46918 23.5261 0 18.2596 0 11.7631C0 5.26651 5.46918 0 12.2158 0C18.9623 0 24.4315 5.26651 24.4315 11.7631C24.4315 14.8751 23.1765 17.7049 21.1272 19.8088L28.8655 27.2904L26.7087 29.3757L18.7644 21.6948Z" fill="#F2F4F8"/>
+          </svg></button> 
+        <div class="box">
+          <input class="search-txt" type="text" placeholder="Search" id="searchBar" list="people" onkeyup="filterInput()"/> 
+          <div class="result-box"></div>
+        </div>
+      </div>
+    </div> -->
+
     <script src="js/relationshipsUtils.js"></script>
     <script src="js/relationship.js"></script>
+    <!-- <script>
+        var searchBox=document.getElementById("search-bar");
+        var icon=document.getElementsByClassName("submit")[0];
+
+        icon.onclick=function(){
+            searchBox.classList.toggle("active");
+        }
+    </script> -->
   </body>
 </html>
