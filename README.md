@@ -1,4 +1,4 @@
-# George Eliot Archive - Relationship Web  
+# George Eliot's Social Network (Relationship Web)  
 
 The _George Eliot Archive_ features an interactive relationship web (or Social Network)
 in which the novelist's relations with friends and family members are visualized. 
