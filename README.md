@@ -1,4 +1,6 @@
-# George Eliot's Social Network (Relationship Web)  
+# George Eliot's Social Network (Relationship Web) 
+https://georgeeliotarchive.org/relationships
+
 
 The _George Eliot Archive_ features an interactive tool for visualizing George Eliot's friends and relations--her social network.
 
