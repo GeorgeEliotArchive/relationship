@@ -4,15 +4,13 @@ https://georgeeliotarchive.org/relationships
 
 The _George Eliot Archive_ features an interactive tool for visualizing George Eliot's friends and relations--her social network.
 
-Significant relationships are displayed as larger and physically closer to George Eliot, 
-while lesser relations are smaller and placed further away. 
-Click on any of the 125 thumbnail portraits to read brief biographical summaries of their relationship with George Eliot.
-Below the summaries is an index to letters written to or fom George Eliot as they appear in the George Eliot Letters edited by Gordon S. Haight, showing volume and page number. 
-These biographical summaries were written by several _George Eliot Archive_ team members 2019-2021 with Dr Beverley Rilett. 
-Summaries condense information from longer biographical essays collected in based on _The Oxford Reader's Companion to George Eliot_ edited by John Rignall. 
-The team thanks Dr. Rignall for reviewing our summaries and his numerous editorial suggestions prior to the launch of this application.
-Thank you to other expert advisors as well, including Kathleen McCormack, Brenda MacKay, and Robert Muscutt for additional editorial collaboration.
-Rachel Gordon edited the letters index. 
+### Project Description:
 
-The data visualization is created using JavaScript with the D3.js library. It was first created by a brilliant undergraduate computer science student,Riley Ji, at the University of Nebraska-Lincoln. 
-This project continues to evolve. The coding was revised and updated since 2021 by Brad Hughes, and later Libo Sun at Auburn University.
+- **Interactive Visualization Tool**: Displays George Eliot's social network, with significant relationships appearing larger and closer to her, and lesser ones smaller and farther away.  
+- **Biographical Summaries**: Click on any of the 125 thumbnail portraits to access brief summaries of their relationship with George Eliot, written by class and team members (2019–2021) under Dr. Beverley Rilett. These are based on _The Oxford Reader's Companion to George Eliot_ (edited by John Rignall), who also reviewed and provided editorial suggestions.  
+- **Letters Index**: Includes references to letters written to/from George Eliot, as indexed in _The George Eliot Letters_ (edited by Gordon S. Haight). Rachel Gordon edited the project's index of letters.  
+- **Expert Contributions**: Additional editorial review provided by John Rignall, Kathleen McCormack, Brenda MacKay, Robert Muscutt, and Beverley Rilett.  
+- **Data Visualization Development**:  
+  - Initial coding by Riley Ji (University of Nebraska-Lincoln) using JavaScript and D3.js.  
+  - Updates and revisions by Brad Hughes and Libo Sun (Auburn University) since 2021.  
+- **Ongoing Project**: Many more relationships will be added as this project continues to evolve with new updates and features. 
