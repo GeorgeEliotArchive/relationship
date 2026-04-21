@@ -56,7 +56,7 @@ const legendSize = d3
 /**
  * Parse csv data
  */
-let parseData = d3.csv("data/ge_people.csv", function (node) {
+let parseData = d3.csv("data/ge_people_updated.csv", function (node) {
   if (node) {
     //only parse important individuals
     node = parseFullName(node);
